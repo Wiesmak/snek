@@ -4,6 +4,7 @@ import Snake from './snake.js'
 import Apple from "./apple.js";
 import Score from './score.js';
 import Speed from './speed.js';
+import Setup from '../config/setup.js';
 
 export default class Game {
     board
@@ -86,6 +87,7 @@ export default class Game {
         if (this.checkCollision()) {
             alert('Przegrałeś!')
             this.playing = false
+            Setup.reset()
             return
         }
         this.board.update(this.snake)

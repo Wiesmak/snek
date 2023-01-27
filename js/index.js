@@ -1,16 +1,9 @@
-import Game from './modules/game.js'
 import Elements from './config/elements.js'
+import Setup from './config/setup.js'
 import Keyboard from './modules/keyboard.js'
 
 Elements.register()
 
-const main = document.querySelector('#main')
-
-const game = new Game()
+new Setup(document.querySelector('#main'))
 
 Keyboard.init()
-
-main.appendChild(game.board)
-main.appendChild(game.score)
-
-game.start()

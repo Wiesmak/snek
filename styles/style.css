@@ -1,6 +1,5 @@
 .field {
-  background-color: #f5f5f5;
-  border: 1px solid #e0e0e0;
+  border: 0;
 }
 .field.food {
   background-size: 100% 100%;
@@ -13,6 +12,34 @@
 .field.snake {
   background-size: cover;
   background-image: url("../img/head_right.gif");
+}
+
+#text {
+  font-size: 20vh;
+  font-weight: 900;
+  font-family: "Lato", sans-serif;
+  background-image: url("../img/stone.jpg");
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 1px #5d6975;
+  color: transparent;
+}
+
+#start {
+  background-image: url("../img/stone.jpg");
+  border-radius: 10%;
+  font-size: 4vh;
+  padding: 0.25em;
+  margin-top: 1em;
+  border: 5px outset #5d6975;
+}
+#start:active {
+  background-image: url("../img/stone.jpg");
+  border-radius: 10%;
+  font-size: 4vh;
+  padding: 0.25em;
+  margin-top: 1em;
+  border: 5px inset #5d6975;
 }
 
 * {
@@ -29,6 +56,7 @@
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  background-image: url("../img/dirt.jpg");
 }
 
 .board {
@@ -36,6 +64,13 @@
   grid-template-columns: repeat(15, 1fr);
   grid-template-rows: repeat(15, 1fr);
   grid-gap: 0;
+  background-image: url("../img/grass.png");
+  background-repeat: repeat;
+  background-size: contain;
+  border-radius: 5%;
+  border-image: url("../img/stone.jpg") 28/16px/0 round;
+  border-width: 28px;
+  border-style: solid;
   height: 80vh;
   width: 80vh;
 }
@@ -49,8 +84,14 @@
 .score {
   position: absolute;
   top: 2vh;
-  left: 2vw;
-  font-size: 2rem;
+  left: 3vw;
+  font-size: 8rem;
+  font-weight: 900;
+  background-image: url("../img/stone.jpg");
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 1px #5d6975;
+  color: transparent;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -68,7 +68,6 @@ export default class Board extends HTMLElement {
 
     setTail = (snake) => {
         let tail = snake.body.at(-1)
-        const direction = snake.direction
         const tailField = Util.childWhere(
             this.children,
             (e) => e.coordinates.x === tail.x && e.coordinates.y === tail.y
@@ -100,35 +99,35 @@ export default class Board extends HTMLElement {
                 if (beforeField.y > field.y) {
                     if (afterField.x === field.x) {
                         if (afterField.y > field.y) fieldElement.style.backgroundImage = Img.body.vertical
-                        else if (afterField.y < field.y) fieldElement.style.backgroundImage = Img.body.leftUp
+                        else if (afterField.y < field.y) fieldElement.style.backgroundImage = Img.body.horizontal
                     } else if (afterField.y === field.y) {
-                        if (afterField.x > field.x) fieldElement.style.backgroundImage = Img.body.leftUp
-                        else if (afterField.x < field.x) fieldElement.style.backgroundImage = Img.body.leftDown
+                        if (afterField.x > field.x) fieldElement.style.backgroundImage = Img.body.rightDown
+                        else if (afterField.x < field.x) fieldElement.style.backgroundImage = Img.body.rightUp
                     }
                 } else if (beforeField.y < field.y) {
                     if (afterField.x === field.x) {
-                        if (afterField.y > field.y) fieldElement.style.backgroundImage = Img.body.rightDown
+                        if (afterField.y > field.y) fieldElement.style.backgroundImage = Img.body.horizontal
                         else if (afterField.y < field.y) fieldElement.style.backgroundImage = Img.body.vertical
                     } else if (afterField.y === field.y) {
-                        if (afterField.x > field.x) fieldElement.style.backgroundImage = Img.body.rightUp
-                        else if (afterField.x < field.x) fieldElement.style.backgroundImage = Img.body.rightDown
+                        if (afterField.x > field.x) fieldElement.style.backgroundImage = Img.body.leftDown
+                        else if (afterField.x < field.x) fieldElement.style.backgroundImage = Img.body.leftUp
                     }
                 }
             } else if (beforeField.y === field.y) {
                 if (beforeField.x > field.x) {
                     if (afterField.x === field.x) {
-                        if (afterField.y > field.y) fieldElement.style.backgroundImage = Img.body.leftUp
+                        if (afterField.y > field.y) fieldElement.style.backgroundImage = Img.body.rightDown
                         else if (afterField.y < field.y) fieldElement.style.backgroundImage = Img.body.leftDown
                     } else if (afterField.y === field.y) {
                         if (afterField.x > field.x) fieldElement.style.backgroundImage = Img.body.horizontal
-                        else if (afterField.x < field.x) fieldElement.style.backgroundImage = Img.body.rightUp
+                        else if (afterField.x < field.x) fieldElement.style.backgroundImage = Img.body.vertical
                     }
                 } else if (beforeField.x < field.x) {
                     if (afterField.x === field.x) {
-                        if (afterField.y > field.y) fieldElement.style.backgroundImage = Img.body.rightDown
-                        else if (afterField.y < field.y) fieldElement.style.backgroundImage = Img.body.rightUp
+                        if (afterField.y > field.y) fieldElement.style.backgroundImage = Img.body.rightUp
+                        else if (afterField.y < field.y) fieldElement.style.backgroundImage = Img.body.leftUp
                     } else if (afterField.y === field.y) {
-                        if (afterField.x > field.x) fieldElement.style.backgroundImage = Img.body.leftDown
+                        if (afterField.x > field.x) fieldElement.style.backgroundImage = Img.body.vertical
                         else if (afterField.x < field.x) fieldElement.style.backgroundImage = Img.body.horizontal
                     }
                 }
