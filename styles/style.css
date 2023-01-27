@@ -1,0 +1,56 @@
+.field {
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+}
+.field.food {
+  background-size: 100% 100%;
+  background-image: url("../img/apple.gif");
+}
+.field.speed {
+  background-size: 100% 100%;
+  background-image: url("../img/zap.png");
+}
+.field.snake {
+  background-size: cover;
+  background-image: url("../img/head_right.gif");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(15, 1fr);
+  grid-gap: 0;
+  height: 80vh;
+  width: 80vh;
+}
+@media (orientation: portrait) {
+  .board {
+    height: 80vw;
+    width: 80vw;
+  }
+}
+
+.score {
+  position: absolute;
+  top: 2vh;
+  left: 2vw;
+  font-size: 2rem;
+}
+
+/*# sourceMappingURL=style.css.map */

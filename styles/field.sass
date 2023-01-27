@@ -1,0 +1,15 @@
+@mixin fit
+  background-size: 100% 100%
+
+.field
+  background-color: #f5f5f5
+  border: 1px solid #e0e0e0
+  &.food
+    @include fit
+    background-image: url("../img/apple.gif")
+  &.speed
+    @include fit
+    background-image: url("../img/zap.png")
+  &.snake
+    background-size: cover
+    background-image: url("../img/head_right.gif")
